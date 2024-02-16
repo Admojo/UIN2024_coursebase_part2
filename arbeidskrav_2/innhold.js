@@ -9,7 +9,7 @@ console.log(resources);
 let resourcesHTML = "<h1>Ressursarkiv</h1>"
 resources.map(resourcesItem => resourcesHTML +=
     `<section>
-        <h1">${resourcesItem.category}</h1>
+        <h1>${resourcesItem.category}</h1>
         <article>
             <p>${resourcesItem.text}</p>
             <ul>${resourcesItem.sources}
@@ -17,9 +17,11 @@ resources.map(resourcesItem => resourcesHTML +=
             </ul>
         </article>
     </section>`
+    
     )
 
-console.log(resourcesHTML);
+
+
 
 const main = document.getElementsByTagName("main")
 main[0].innerHTML=resourcesHTML;
