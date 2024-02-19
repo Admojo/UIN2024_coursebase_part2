@@ -7,21 +7,21 @@
     --color3: #E1E5EE;
 	--color4: #fff;
 
-	--nav-size: 2rem;
+	--nav-size: 1.25em;
 	--section-header: 2.5rem;
 }
 
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: var(--color3);
-
-
 }
 
 @media screen and (min-width: 100px ) {
-	.gridMaster{
+	.mainContent{
 		display: flex;
-		min-width: 100vw;
+		flex-direction: column;
+		align-items: center;
+		min-width: 100%;
 		margin: 4rem;
 	}
 
@@ -29,6 +29,8 @@ body {
 		margin: 4rem;
 		min-width: 20rem;
 		min-height: 10rem;
+		/* width: 100%; */
+	
 	}
 
 	h1{
@@ -51,40 +53,43 @@ body {
 		list-style: none;
 	}
 
-	/* header nav ul{
+	header nav ul{
 		display: flex;
-		justify-content: space-between;
-		gap: 0.5rem;
-	} */
+		/* justify-content: space-between; */
+		gap: 1.23rem;
+	}
 
 	nav ul li{
 		background-color: var(--color1);
-		font-size: var(--nav-size) ;
+		justify-content: space-between;
 	}
 
 	header {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		flex-direction: row;
 		/* padding: 2rem 1rem; */
-		background-color: var(--color1);
+		/* background-color: var(--color1); */
 		font-size: var(--nav-size);
+		padding: 0;
+		margin: 0;
+		width: 100%;
 
 	}
-	nav ul{
+	nav ul {
 		display: flex;
-		justify-content: space-between;
 		flex-direction: row;
+		width: 100%;
+		padding: 0;
+		margin: 0;
 	}
 
 	section {
 		background-color: var(--color4);
 		padding: 5rem;
-		width: 860px;
-		height: 260px;
-		overflow: auto;
-		/* margin: 4rem;
-		margin-top: -0.1rem; */
+		width: 40rem;
+		height: 20rem;
+		
 	}
 
 	button {
@@ -94,12 +99,11 @@ body {
 		border: none;
 	}
 
-	#categories {
-		justify-content: space-evenly;
-	}
+	button:focus {
+        background-color: var(--color4);
+        color: var(--color1);
+    }
 
-	header nav ul li:active{
-		color: var(--color1);
-		background-color: var(--color4);
-	}
+
+
 }

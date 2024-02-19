@@ -24,7 +24,7 @@
 
 //         })
     
-//     // console.log(resourcesHTML);
+// // console.log(resourcesHTML);
 // const main = document.getElementsByTagName("main")
 // main[0].innerHTML=resourcesHTML;
 
@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
 
 console.log(resources);
 
