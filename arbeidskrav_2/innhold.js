@@ -1,10 +1,9 @@
 
+//Første utkast
 //Sjekke hva som ligger av innhold i arrayet som holder på ressurser
-
-
 //Vise innhold i main/section, basert på hvilken kategori bruker klikker på
 
-//1. Mapp
+//1. Mappe
 // let resourcesHTML = ""
 // resources.map(resourcesItem => {
 //     resourcesHTML +=
@@ -64,18 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 console.log(resources);
 
-
-// let resourcesText = 
-// document.getElementById("html-content").onclick = function() {showContent()};
-// function showContent() {
-
-//     document.getElementById("text").innerHTML = 
-// }
-
-
-// function ( resources.map => (reso) {
-
-// }
 
 
 
