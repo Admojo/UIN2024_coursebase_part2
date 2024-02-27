@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 export default function Layout({children}){
     return(
@@ -11,7 +11,9 @@ export default function Layout({children}){
                 </ul>
             </nav>
         </header>
-        {children}
+        <main>
+            {children}
+        </main>
         <footer>Footer</footer>
         </>
     )
