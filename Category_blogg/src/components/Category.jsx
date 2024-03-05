@@ -1,25 +1,31 @@
 import { useParams } from "react-router-dom"
-import { posts } from "../assets/posts"
 import { useEffect, useState } from "react"
 import PostCard from "./PostCard"
 
-export default function Category(){
-
-
-    const {slug} = useParams()
+export default function Category({currentId}){
     const [post, setPost] = useState()
-    // Blokkparantes: innheolder det som skal trigge useEffect 
-    useEffect (() => {
-        setPost(posts.filter(post => post.category === slug))
-    }, [])
-    console.log("sjekk", post)
 
+    const getCharacter = async() =>{
+        fetch(`https://rickandmortyapi.com/api/character/${currentId}`)
+        .then(response => response.json())
+        .then(data => setPost(data))
+        .catch(error => console.error(error))
+    }
+
+    useEffect(()=>{
+        getCharacter()
+    },[])
+
+    console.log("sjekk", currentId)
     return (
-        <section>
-            <h1>{slug}</h1>
-            {/* Hver gang man skal mappe, viktig med unik id, som ligger på object.  i dette tilfellet: key ="" */}
-            {post?.map(item => <PostCard key={item.id} title={item.title} category={item.category} id={item.id} ingress={item.ingress}/>)}
-        </section>
-        
+    <section>
+        <h1>{post?.name}</h1>
+        <img src={post?.image} alt={post?.name} />
+        <ul>
+            {post?.episode?.map((item, i) => <li key={i}><a href={item}>{item}</a></li>)}
+        </ul>
+        {/*post?.map(item => <PostCard key={item.id} title={item.title} category={item.category} id={item.id} ingress={item.ingress}/>)*/}
+    </section>
+    
     )
 }
