@@ -13,17 +13,23 @@ export default function Category({currentId}){
         .catch(error => console.error(error))
     }
 
+
     useEffect(()=>{
         getCharacter()
-    },[])
+    },[currentId])
 
     console.log("sjekk", currentId)
     return (
     <section>
+        <p>{name}</p>
         <h1>{post?.name}</h1>
         <img src={post?.image} alt={post?.name} />
         <ul>
+<<<<<<< HEAD
             {post?.episode?.map((item, i) => <li key={i} onClick={()=>getEpisode(item)}><Episode name={item}/></li>)}
+=======
+            {post?.episode?.map((item, i) => <li key={i}><Episode name={item} /></li>)}
+>>>>>>> b23e3ab2cd0b1e7d08ac753065b77263b5384e13
         </ul>
         {/*post?.map(item => <PostCard key={item.id} title={item.title} category={item.category} id={item.id} ingress={item.ingress}/>)*/}
     </section>
