@@ -1,12 +1,18 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+
+
 import Home from './components/Home'
 import Categories from './components/Categories'
 import Layout from './components/Layout'
 import Category from './components/Category'
 import CategoriesIndex from './components/CategoriesIndex'
+
+
 import { posts } from './assets/posts'
+
 import PostPage from './components/PostPage'
+
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -35,11 +41,14 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route index element={<Home content={content}/>}/>
+        <Route index element= {<Home content={content}/> }/>
+        
         <Route path="characters/*" element={<Categories />}>
-          <Route index element={<CategoriesIndex content={content} setQuery={setQuery} setCurrentId={setCurrentId} />}/>
-          <Route path=':slug' element={<Category posts={posts} currentId={currentId} />}/>
-          <Route path=':slug/:postid' element={<PostPage posts={posts} />} />
+          <Route index element={ <CategoriesIndex content={content} setQuery={setQuery} setCurrentId={setCurrentId} />} />
+          <Route path=':slug' element= {<Category posts={posts} currentId={currentId} />} />
+
+          <Route path=':slug/:postid' element=
+            {  <PostPage posts={posts} /> } />
         </Route>
       </Routes>
     </Layout>

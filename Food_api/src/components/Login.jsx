@@ -9,9 +9,9 @@ export default function Login({setLogedIn}){
     <h1>Logg inn ....</h1>
     <form className="login" onSubmit={handleSubmit}>
         <label htmlFor="username">Brukernavn </label>
-        <input type="text" id="username" name="username" placeholder="ackarlse..."/>
+        <input type="text" id="username" name="username" placeholder="Username"/>
         <label htmlFor="password">Passord</label>
-        <input type="password" id="password" name="password" placeholder="******" />
+        <input type="password" id="password" name="password" placeholder="Password" />
         <button type="submit" onClick={()=>setLogedIn(true)}>Logg inn</button> 
     </form>
     </>
